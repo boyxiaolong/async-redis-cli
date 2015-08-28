@@ -22,11 +22,6 @@ void Redis_Connection::onRead(char* pdata, size_t length)
 	redis_handler.redisProcessCallbacks();
 }
 
-void Redis_Connection::onClose()
-{
-
-}
-
 void Redis_Connection::onConnected()
 {
 	redis_handler.SetConnected(true);

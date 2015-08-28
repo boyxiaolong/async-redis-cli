@@ -12,7 +12,6 @@ public:
 	int get(int key, redisCallbackFn fun);
 	redisAsyncContextWrapper& get_redisAsyncContextWrapper();
 	virtual void onRead(char* pdata, size_t length);
-	virtual void onClose();
 	virtual void onConnected();
 
 	void redisCallBack(redisAsyncContext* predisAsyncContext, redisReply* predisReply, void* pData);
