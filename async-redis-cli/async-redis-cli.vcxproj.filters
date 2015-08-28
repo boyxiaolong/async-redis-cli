@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="redis-cli">
+      <UniqueIdentifier>{61526610-fa06-4342-8dfb-c4d293e668c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libevent-session">
+      <UniqueIdentifier>{e6ae961e-d26b-4f0b-a000-8541e85f711f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="example">
+      <UniqueIdentifier>{d5b4c938-c9bf-462c-ae59-be32909e4cbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{dcf1e46a-4109-4875-ada6-0ef6206555c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="redis-cli\async.cpp">
+      <Filter>redis-cli</Filter>
+    </ClCompile>
+    <ClCompile Include="redis-cli\dict.c">
+      <Filter>redis-cli</Filter>
+    </ClCompile>
+    <ClCompile Include="redis-cli\hiredis.cpp">
+      <Filter>redis-cli</Filter>
+    </ClCompile>
+    <ClCompile Include="redis-cli\sds.cpp">
+      <Filter>redis-cli</Filter>
+    </ClCompile>
+    <ClCompile Include="redis-cli\zmalloc.cpp">
+      <Filter>redis-cli</Filter>
+    </ClCompile>
+    <ClCompile Include="libevent-session\libevent-connection.cpp">
+      <Filter>libevent-session</Filter>
+    </ClCompile>
+    <ClCompile Include="libevent-session\Redis_Connection.cpp">
+      <Filter>libevent-session</Filter>
+    </ClCompile>
+    <ClCompile Include="example\main.cpp">
+      <Filter>example</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="redis-cli\async.h">
+      <Filter>redis-cli</Filter>
+    </ClInclude>
+    <ClInclude Include="redis-cli\dict.h">
+      <Filter>redis-cli</Filter>
+    </ClInclude>
+    <ClInclude Include="redis-cli\hiredis.h">
+      <Filter>redis-cli</Filter>
+    </ClInclude>
+    <ClInclude Include="redis-cli\sds.h">
+      <Filter>redis-cli</Filter>
+    </ClInclude>
+    <ClInclude Include="redis-cli\zmalloc.h">
+      <Filter>redis-cli</Filter>
+    </ClInclude>
+    <ClInclude Include="libevent-session\libevent-connection.h">
+      <Filter>libevent-session</Filter>
+    </ClInclude>
+    <ClInclude Include="libevent-session\Redis_Connection.h">
+      <Filter>libevent-session</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libevent_extras.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="libevent.lib">
+      <Filter>lib</Filter>
+    </Library>
+    <Library Include="libevent_core.lib">
+      <Filter>lib</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
