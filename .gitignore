@@ -45,3 +45,9 @@ Temporary Items
 *.user
 x64/
 debug/
+
+*.dblite
+
+*.o
+
+xj_redis_cli

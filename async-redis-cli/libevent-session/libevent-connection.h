@@ -29,7 +29,6 @@ private:
 	void init_socket();
 	void set_callback();
 
-	sockaddr_in sockaddr_;
 	struct bufferevent* bev;
 	evutil_socket_t fd;
 };

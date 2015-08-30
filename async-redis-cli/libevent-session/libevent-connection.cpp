@@ -1,5 +1,10 @@
 #include "libevent-connection.h"
-
+#ifndef _WIN32
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#endif
 libeventClient::libeventClient(event_base* ioloop)
 {
 	bev = bufferevent_socket_new(ioloop, -1, BEV_OPT_CLOSE_ON_FREE);
@@ -25,11 +30,15 @@ void libeventClient::onRead(char* pdata, size_t length)
 
 int libeventClient::asynConnect(std::string ip, int port)
 {
+	sockaddr_in sockaddr_;
 	memset(&sockaddr_, 0, sizeof(sockaddr_));
 	sockaddr_.sin_family = AF_INET;  
 	sockaddr_.sin_port = htons(port);  
+#ifdef _WIN32
 	sockaddr_.sin_addr.S_un.S_addr = inet_addr(ip.c_str());   
-	memset(sockaddr_.sin_zero, 0x00, 8);
+#else
+	inet_pton(AF_INET, ip.c_str(), &sockaddr_.sin_addr);
+#endif
 
 	if (bufferevent_socket_connect(bev,
 		(struct sockaddr *)&sockaddr_, sizeof(sockaddr_)) < 0) {
@@ -84,7 +93,7 @@ void libeventClient::eventCallback(struct bufferevent* bev, short events, void* 
 	}
 	else if(events & BEV_EVENT_ERROR) {
 		conn->onClose(events);
-		printf("Got an error on the connection: %s\n", strerror(errno));
+		printf("Got an error on the connection");
 	}
 	else if(events & BEV_EVENT_CONNECTED) {
 		printf("connected \n");

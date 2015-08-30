@@ -44,6 +44,8 @@
 #ifdef _WIN32
 #define strcasecmp _stricmp
 #define strncasecmp _strnicmp
+#else
+#define _snprintf snprintf
 #endif
 
 /* Functions that proxy to hiredis */
