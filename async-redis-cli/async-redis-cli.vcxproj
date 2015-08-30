@@ -160,9 +160,9 @@
     <ClInclude Include="redis-cli\zmalloc.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="libevent.lib" />
-    <Library Include="libevent_core.lib" />
-    <Library Include="libevent_extras.lib" />
+    <Library Include="include\libevent.lib" />
+    <Library Include="include\libevent_core.lib" />
+    <Library Include="include\libevent_extras.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

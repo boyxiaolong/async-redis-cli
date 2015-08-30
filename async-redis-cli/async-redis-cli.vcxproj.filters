@@ -64,13 +64,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="libevent_extras.lib">
+    <Library Include="include\libevent_core.lib">
       <Filter>lib</Filter>
     </Library>
-    <Library Include="libevent.lib">
+    <Library Include="include\libevent_extras.lib">
       <Filter>lib</Filter>
     </Library>
-    <Library Include="libevent_core.lib">
+    <Library Include="include\libevent.lib">
       <Filter>lib</Filter>
     </Library>
   </ItemGroup>
